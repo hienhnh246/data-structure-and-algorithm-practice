@@ -2,34 +2,39 @@
 
 #define SIZE 5
 
-void enqueue(int);
-void dequeue();
+void enQueue(int);
+void deQueue();
 void display();
 
 int items[SIZE], front = -1, rear = -1;
 
 int main()
 {
-	dequeue();
+	//deQueue is not possible on empty queue
+	deQueue();
 
-	enqueue(1);
-	enqueue(2);
-	enqueue(3);
-	enqueue(4);
-	enqueue(5);
+	//enQueue 5 elements
+	enQueue(1);
+	enQueue(2);
+	enQueue(3);
+	enQueue(4);
+	enQueue(5);
 
-	enqueue(6);
+	// 6th element can't be added to because the queue is full
+	enQueue(6);
 
 	display();
 
-	dequeue();
+	//deQueue removes element entered first i.e. 1
+	deQueue();
 
+	//Now we have just 4 elements
 	display();
 
 	return 0;
 }
 
-void enqueue(int value)
+void enQueue(int value)
 {
 	if (rear == SIZE - 1)
 		printf("\nQueue is Full!\n");
@@ -44,7 +49,7 @@ void enqueue(int value)
 	}
 }
 
-void dequeue()
+void deQueue()
 {
 	if (front == -1)
 		printf("\nQueue is Empty!\n");
