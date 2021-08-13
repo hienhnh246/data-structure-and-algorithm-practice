@@ -38,20 +38,16 @@ void enQueue(int element)
 
 void deQueue()
 {
-	int element;
-
 	if (isEmpty())
 		printf("\nQueue is Empty!\n");
 	else
 	{
-		element = items[front];
+		printf("\nDeleted element -> %d\n", items[front]);
 
 		if (front == rear)
 			front = rear = -1;
 		else
 			front = (front + 1) % SIZE;
-
-		printf("\nDeleted element -> %d\n", element);
 	}
 }
 

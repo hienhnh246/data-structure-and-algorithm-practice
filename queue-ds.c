@@ -71,7 +71,7 @@ void display()
 	{
 		printf("\nQueue elements are: ");
 
-		for (int i = front; i < rear; i++)
+		for (int i = front; i <= rear; i++)
 			printf("%d ", items[i]);
 
 		printf("\n");

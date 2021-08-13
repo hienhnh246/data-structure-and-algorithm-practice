@@ -11,58 +11,58 @@ typedef struct Stack
 	int top;
 } stack;
 
-void createEmptyStack(stack *sp)
+void createEmptyStack(stack *pstk)
 {
-	sp->top = -1;
+	pstk->top = -1;
 }
 
-int isFull(stack *sp)
+int isFull(stack *pstk)
 {
-	if (sp->top == MAX - 1)
+	if (pstk->top == MAX - 1)
 		return 1;
 	else
 		return 0;
 }
 
-int isEmpty(stack *sp)
+int isEmpty(stack *pstk)
 {
-	if (sp->top == -1)
+	if (pstk->top == -1)
 		return 1;
 	else
 		return 0;
 }
 
-void push(stack *sp, int newitem)
+void push(stack *pstk, int newitem)
 {
-	if (isFull(sp))
-		printf("\nStack full!\n");
+	if (isFull(pstk))
+		printf("\nStack is Full!\n");
 	else
 	{
-		sp->top++;
-		sp->items[sp->top] = newitem;
+		pstk->top++;
+		pstk->items[pstk->top] = newitem;
 		count++;
 	}
 }
 
-void pop(stack *sp)
+void pop(stack *pstk)
 {
-	if (isEmpty(sp))
+	if (isEmpty(pstk))
 		printf("\nStack empty!\n");
 	else
 	{
-		printf("\nItem popped = %d\n", sp->items[sp->top]);
-		sp->top--;
+		printf("\nItem popped = %d\n", pstk->items[pstk->top]);
+		pstk->top--;
 		count--;
 	}
 }
 
-void printStack(stack *sp)
+void printStack(stack *pstk)
 {
 	printf("\nStack: ");
 
 	for (int i = 0; i < count; i++)
 	{
-		printf("%d ", sp->items[i]);
+		printf("%d ", pstk->items[i]);
 	}
 
 	printf("\n");
@@ -70,28 +70,28 @@ void printStack(stack *sp)
 
 int main()
 {
-	stack *sp = (stack *)malloc(sizeof(stack));
+	stack *pstk = (stack *)malloc(sizeof(stack));
 
-	createEmptyStack(sp);
+	createEmptyStack(pstk);
 
-	pop(sp);
+	pop(pstk);
 
-	push(sp, 1);
-	push(sp, 2);
-	push(sp, 3);
-	push(sp, 4);
+	push(pstk, 1);
+	push(pstk, 2);
+	push(pstk, 3);
+	push(pstk, 4);
 
-	printStack(sp);
+	printStack(pstk);
 
-	pop(sp);
+	pop(pstk);
 
 	printf("\nAfter popping out");
-	printStack(sp);
+	printStack(pstk);
 
-	push(sp, 6);
+	push(pstk, 6);
 
 	printf("\nAfter pushing up");
-	printStack(sp);
+	printStack(pstk);
 
 	return 0;
 }
