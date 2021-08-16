@@ -138,7 +138,7 @@ int delFront(int *arr, int *pfront, int *prear)
 
 	if (*pfront == -1)
 	{
-		printf("\nDeque is empty.\n");
+		printf("\nDeque is Empty!\n");
 
 		return 0;
 	}
@@ -160,7 +160,7 @@ int delRear(int *arr, int *pfront, int *prear)
 
 	if (*pfront == -1)
 	{
-		printf("\nDeque is empty.\n");
+		printf("\nDeque is Empty!\n");
 
 		return 0;
 	}
