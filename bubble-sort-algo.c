@@ -2,14 +2,21 @@
 
 void bubbleSort(int array[], int size)
 {
+	// Loop to access each array element.
 	for (int step = 0; step < size - 1; ++step)
 	{
+		// Check if swapping occurs.
 		int swapped = 0;
 
+		// Loop to compare array elements.
 		for (int i = 0; i < size - step - 1; ++i)
 		{
+			// Compare two array elements.
+			// Change > to < to sort in descending order.
 			if (array[i] > array[i + 1])
 			{
+				// Swapping occurs if elements
+				// are not in the intended order.
 				int temp = array[i];
 				array[i] = array[i + 1];
 				array[i + 1] = temp;
@@ -17,6 +24,8 @@ void bubbleSort(int array[], int size)
 			}
 		}
 
+		// No swapping means the array is already sorted
+		// so no need for further comparison.
 		if (swapped == 0)
 			break;
 	}
