@@ -27,7 +27,7 @@ void countingSort(int array[], int size)
 	for (int i = 0; i < size; ++i)
 		count[array[i]]++;
 
-	// Store the cummulative count of each array.
+	// Store the cumulative count of each array.
 	for (int i = 1; i <= max; i++)
 		count[i] += count[i - 1];
 
